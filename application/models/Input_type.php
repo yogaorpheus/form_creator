@@ -17,8 +17,13 @@ class Input_type extends CI_Model {
 
 	public function get_all_input_type ()
 	{
-		$query = $this->db->get('input_type');
+		$query = $this->db->get('input_type')->result_array();
 
-		return $query->result_array();
+		$newdata = array();
+		foreach ($query as $key => $one) {
+			$newdata[$one['id_input_type']] = $one;
+		}
+
+		return $newdata;
 	}
 }
