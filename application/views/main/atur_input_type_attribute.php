@@ -8,10 +8,10 @@
     <section class="content">
       <div class="row">
         <div class="col-md-12">
-          <form id="" action="<?php echo base_url('pengaturan/insert_input_type'); ?>" method="POST">
+          <form id="" action="<?php echo base_url('pengaturan/insert_set_attribute'); ?>" method="POST">
             <div class="box box-primary">
               <div class="box-header with-border">
-                <h3 class="box-title">Pengaturan Tipe Input pada HTML</h3>
+                <h3 class="box-title">Pengaturan Input dan Attribute pada HTML</h3>
 
                 <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -21,27 +21,30 @@
               <div class="box-body">
                 
                 <div class="row">
-                  <div class="col-md-3 form-group">
-                    <label>Jenis Tag</label>
-                    <select class="form-control select2" style="width: 100%;" name="tag">
+                  <div class="col-md-6 form-group">
+                    <label>Tipe Input</label>
+                    <select class="form-control select2" style="width: 100%;" name="input_type[]" multiple>
                       <?php
-                      foreach ($tags as $key => $one_tag) {
-                        echo "<option value='".$one_tag['id_tag']."'>";
-                        echo $one_tag['show_tag'];
+                      foreach ($input_type as $key => $one_type) {
+                        echo "<option value='".$one_type['id_input_type']."'>";
+                        echo $one_type['show_input_type'];
                         echo "</option>";
                       }
                       ?>
                     </select>
                   </div>
 
-                  <div class="col-md-3 form-group">
-                    <label>Syntax Type</label><br>
-                    <input class="form-control" type="text" name="code_input_type" />
-                  </div>
-
-                  <div class="col-md-3 form-group">
-                    <label>Nama Type</label><br>
-                    <input class="form-control" type="text" name="show_input_type" />
+                  <div class="col-md-6 form-group">
+                    <label>Atribut Input</label>
+                    <select class="form-control select2" style="width: 100%;" name="attribute[]" multiple>
+                      <?php
+                      foreach ($attributes as $key => $one_attr) {
+                        echo "<option value='".$one_attr['id_attribute']."'>";
+                        echo $one_attr['show_attribute'];
+                        echo "</option>";
+                      }
+                      ?>
+                    </select>
                   </div>
                 </div>
               </div>

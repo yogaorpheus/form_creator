@@ -9,8 +9,7 @@
 
   <?php $this->load->view('base/header.php'); ?>
   <!-- Left side column. contains the logo and sidebar -->
-  <?php //$this->load->view('base/sidebar.php', $menu); ?>
-  <!-- $this->load->view('base/sidebar.php', $menu); -->
+  <?php $this->load->view('base/sidebar.php'); ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
